@@ -1,0 +1,51 @@
+<div class="row alerts-container" data-ng-controller=AlertsCtrl data-ng-show=alerts.length>
+   <div class=col-xs-12>
+      <alert data-ng-repeat="alert in alerts" type={{alert.type}} close=closeAlert($index)>{{alert.msg}}</alert>
+   </div>
+</div>
+
+<div class=row>
+   
+   <div class=col-lg-11>
+      <rd-widget>
+         <rd-widget-header icon=fa-users title='Appium Node Capabilities'></rd-widget-header>
+         <rd-widget-body>
+            <div class=table-responsive ng-controller="SubmitNodeFormData">
+               
+                <form ng-submit="submitData(os, AppType, device, timeout)" method="post">
+            
+                      <div class="form-group">
+                        <label>Operating System</label>
+                        <select class="form-control" name="os" ng-model="os">
+                            <option>Android</option>
+                            <option>IOS</option>
+                        </select>
+                      </div> 
+                    
+                     <div class="form-group">
+                        <label>Application Type</label>
+                        <select class="form-control" name="AppType" ng-model="AppType">
+                            <option>NATIVE/HYBRID</option>
+                            <option>WEB</option>
+                        </select>
+                      </div> 
+
+                      <div class="form-group">
+                        <label>Device Identifier</label>
+                        <input type="text" class="form-control" name="device" placeholder="Device Name" ng-model="device">
+                      </div>
+
+                      <div class="form-group">
+                        <label>Command Timeout</label>
+                        <input type="text" class="form-control" name="timeout" placeholder="Command Timeout" ng-model="timeout">
+                      </div>         
+
+                      <button type="submit" class="btn btn-sm btn-info ng-scope">Create Node</button>
+                </form>
+                
+            </div>
+         </rd-widget-body>
+         <rd-widget></rd-widget>
+      </rd-widget>
+   </div>
+</div>
