@@ -43,3 +43,4 @@ Temporary Items
 .apdisk
 bin/www
 bower_components/
+node_modules/
