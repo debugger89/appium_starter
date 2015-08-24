@@ -53,6 +53,7 @@ router.post('/execute_shell', function(req, res, next) {
     var os = req.body.params.os;
     var deviceName = req.body.params.device;
     var timeout = req.body.params.timeout;
+    var AppType = req.body.params.AppType;
     
     var command = "node . ";
     
@@ -62,7 +63,10 @@ router.post('/execute_shell', function(req, res, next) {
     
         command = command + " --device-name "+deviceName;
         command = command + " -bp "+lastUsedBootstrapPort;
-        command = command + " --chromedriver-port "+lastChromeDriverPort;
+        
+        if(AppType == "WEB"){
+            command = command + " --chromedriver-port "+lastChromeDriverPort;
+        }
         
         lastPortNumber++;
         lastUsedBootstrapPort++;

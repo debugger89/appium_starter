@@ -16,28 +16,28 @@
             
                       <div class="form-group">
                         <label>Operating System</label>
-                        <select class="form-control" name="os" ng-model="os">
-                            <option>Android</option>
+                        <select class="form-control" name="os" ng-model="os" required>
+                            <option value="Android" selected>Android</option>
                             <option>IOS</option>
                         </select>
                       </div> 
                     
                      <div class="form-group">
                         <label>Application Type</label>
-                        <select class="form-control" name="AppType" ng-model="AppType">
-                            <option>NATIVE/HYBRID</option>
+                        <select class="form-control" name="AppType" ng-model="AppType" required>
+                            <option value="NATIVE/HYBRID" selected>NATIVE/HYBRID</option>
                             <option>WEB</option>
                         </select>
                       </div> 
 
                       <div class="form-group">
                         <label>Device Identifier</label>
-                        <input type="text" class="form-control" name="device" placeholder="Device Name" ng-model="device">
+                        <input type="text" class="form-control" name="device" placeholder="Device Name" ng-model="device" required>
                       </div>
 
                       <div class="form-group">
                         <label>Command Timeout</label>
-                        <input type="text" class="form-control" name="timeout" placeholder="Command Timeout" ng-model="timeout">
+                        <input type="text" class="form-control" name="timeout" placeholder="Command Timeout" ng-model="timeout" required>
                       </div>         
 
                       <button type="submit" class="btn btn-sm btn-info ng-scope">Create Node</button>
